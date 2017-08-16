@@ -1,0 +1,268 @@
+<html>
+<head>
+	<title></title>
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+.ro1{
+
+	background-color: #3b5998;
+}
+.ro2{
+	margin-top: 8px;
+}
+.col1{
+	margin-top: 25px;
+}
+#b1{
+
+	color: white; background-color:#0066cc; border:#2766a5;border-radius:2px;border:1px solid black;font-size:12px;
+	}
+	 #b1:hover{
+	background-color: #3b5998;
+}
+.txt{
+
+min-height: 46px;
+}
+#btn1 {
+  background: #79bc64;
+  background-image: -webkit-linear-gradient(top, #79bc64, #578843);
+  background-image: -moz-linear-gradient(top, #79bc64, #578843);
+  background-image: -ms-linear-gradient(top, #79bc64, #578843);
+  background-image: -o-linear-gradient(top, #79bc64, #578843);
+  background-image: linear-gradient(to bottom, #79bc64, #578843);
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  text-shadow: 0px 1px 0px #898a88;
+  -webkit-box-shadow: 0px 0px 0px #a4e388;
+  -moz-box-shadow: 0px 0px 0px #a4e388;
+  box-shadow: 0px 0px 0px #a4e388;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #3b6e22  1px;
+  text-decoration: none;
+}
+
+#btn1:hover {
+  background: #79bc64;
+  background-image: -webkit-linear-gradient(top, #79bc64, #5e7056);
+  background-image: -moz-linear-gradient(top, #79bc64, #5e7056);
+  background-image: -ms-linear-gradient(top, #79bc64, #5e7056);
+  background-image: -o-linear-gradient(top, #79bc64, #5e7056);
+  background-image: linear-gradient(to bottom, #79bc64, #5e7056);
+  text-decoration: none;
+}
+::-webkit-input-placeholder
+{
+color:#adadad ;
+	font-weight:lighter;
+	font-size: 20;
+}
+input.formInvalid::-webkit-input-placeholder {
+   color: red;
+}
+.main{
+	background-image: linear-gradient( to top,#dfe3ee 20%,#ffffff 100%);
+	height: 750px;
+}
+body{
+	margin: 0px;
+}
+.container-fluid{
+	margin: 0px;
+	padding: 0px;
+}
+.scrollable-menu {
+    height: auto;
+    max-height: 155px;
+    overflow-x: hidden;
+}
+.colsub{
+	padding-top: 23px;
+}
+.txt1{
+	border:1px solid black;
+}
+.cll{
+  border:2px solid red;
+}
+</style>
+<script>
+$(document).ready(function(){
+	$("#b1").click(function(e){
+		if(($("#t1").val()=="")|| ($("#t2").val()==""))
+		{
+			$("#not1").text("Enter your Email Id and Password");
+      $("#t1").addClass("cll");
+      $("#t2").addClass("cll");
+      e.preventDefault();
+		}
+	});
+  $("#btn1").click(function(e){
+    var flag=0;
+      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    if($("#name1").val()=="")
+    {
+      flag=1;
+      $("#name1").addClass("cll");
+        $("#not2").text("Enter your First Name");
+    }
+    if($("#name2").val()=="")
+    {
+      flag=1;
+         $("#name2").addClass("cll");
+        $("#not3").text("Enter your Last Name");
+    }
+
+    if(reg.test($("#name3").val())==false)
+    {
+      
+          flag=1;
+             $("#name3").addClass("cll");
+      if($("#name3").val()=="")
+    {
+  
+        $("#not4").text("Enter your Email address");
+    }
+    else
+    {
+       $("#not4").text("Invalid Email address");
+    }
+
+    }
+ 
+     if($("#name4").val()=="")
+    {
+      flag=1;
+         $("#name4").addClass("cll");
+        $("#not5").text("Enter your Password");
+    }
+
+    if($("#s1").val()=="samp")
+{
+flag=1;
+   $("#s1").addClass("cll");
+        $("#not6").text("Enter your Date of Birth");
+        
+}
+    if($("#s2").val()=="samp1")
+{
+flag=1;
+  $("#s2").addClass("cll");
+        $("#not6").text("Enter your Date of Birth");
+        
+}
+
+    if($("#s3").val()=="samp3")
+{
+flag=1;
+  $("#s3").addClass("cll");
+        $("#not6").text("Enter your Date of Birth");
+        
+}
+
+if(!($("#r1").is(":checked")) && !($("#r2").is(":checked")))
+{
+  flag=1;
+  $("#not7").text("Enter your Gender");
+}
+
+    if(flag==0)
+    {
+      return true;
+    }
+    else
+    {
+e.preventDefault();
+    }
+  })
+})
+
+</script>
+</head>
+<body>
+<div class="container-fluid">
+<div class="row ro1">
+<div class="col-lg-5 col-lg-offset-2  col1 col-md-12 "><img src="../css/logo.png" class="img-responsive"></div>
+<div class="col-lg-5"><div class="row"><form action="#" method="get" onsubmit="return func()">
+<div class="form-group col-lg-5">
+<label style="color:white;font-family:Arial;font-size:12px;">Email or Phone</label><input type="email"  id="t1" class="form-control txt1">
+<label style="color:red;font-family:Arial;font-size:13px;" id="not1"></label>
+</div>
+<div class="form-group col-lg-5">
+	<label style="color:white;font-family:Arial;font-size:12px;">Password</label><input type="Password"  id="t2" class="form-control txt1"><label style="color:#64b7ed;font-family:Arial;font-size:12px;">Forgotten account?</label>
+</div>
+<div class="form-group col-lg-2 ">
+	<div class="colsub">
+<input type="submit" value="Log In" id="b1"></div>
+</div></form>
+</div></div>
+</div>
+<div class="main visible-lg">
+<div style="float:left;">
+<br><br><div style="width:500px;margin-left:270px;"><font style="font-family:calibri;font-size:23px;color: #002266;font-weight:800">Facebook helps you connect and share with the peoples in your life.</font></div>
+<div style="margin-left:272px;"><img src="../css/connect.png" width="540px" height="210px"></div>
+</div>
+<div style="float:left;margin-left:70px;"><br>
+
+<p><span class="h1"><strong>Create an account</strong></span></p>
+<p><font face="Arial" color="#0d0d0d" size=4>It's free and always will be.</font></p>
+<p>
+
+<form action="#" method="get" onsubmit="return func2()" class="form-horizontal form">
+
+
+<div class="form-group">
+<div class="col-lg-6 "><input type="text" class="form-control txt" placeholder="First name" id="name1" ><br><font style="color:red;font-family:Arial;font-size:13px;" id="not2"></font></div>
+<div class="col-lg-6 "><input type="text" class="form-control txt" placeholder="Surname" id="name2"><br><font style="color:red;font-family:Arial;font-size:13px;" id="not3"></font></div>
+</div>
+<div class="form-group">
+<div class="col-lg-12 "><input type="text" class="form-control txt" placeholder="Mobile number or email address" id="name3"><br><font style="color:red;font-family:Arial;font-size:13px;" id="not4"></font></div>
+</div>
+<div class="form-group">
+<div class="col-lg-12 "><input type="password" class="form-control txt" placeholder="New password" id="name4"><br><font style="color:red;font-family:Arial;font-size:13px;" id="not5"></font></div>
+</div>
+	<h4 style="">Birthday</h4>
+	<div class="form-inline col-lg-7" style="padding-left:0px;">
+<select id="s1" class="form-control"><option value="one">1</option><option value="two">2</option><option value="three">3</option><option value="four">4</option><option value="five">5</option><option value="six">6</option><option value="seven">7</option><option value="eight">8</option><option value="samp"  selected="selected">Day</option><option value="nine">9</option><option value="ten">10</option></select>
+<select id="s2" class="form-control"><option value="jan">January</option><option value="feb">February</option><option value="mar">March</option><option value="apr">April</option><option value="may">May</option><option value="jun">June</option><option value="july">July</option><option value="aug">August</option><option value="sep">September</option><option value="oct">October</option><option value="nov">November</option><option value="dec">December</option><option value="samp1" selected="selected">Month</option></select>
+<select id="s3" class="form-control"><option value="samp3" selected="selected">Year</option><option value="y1">2007</option><option value="y2">2006</option><option value="y3">2005</option><option value="y4">2004</option><option value="y5">2003</option><option value="y6">2002</option></select>
+
+</div>
+<div class="col-lg-4" style="padding-left:0px;">
+<font style="color:blue;font-size:13px;">why do i need to provide my date of birth?
+</font>
+</div><br><br><font style="color:red;font-family:Arial;font-size:13px;" id="not6"></font>
+
+<div class="form-group">
+<div class="col-lg-3 "><h4><input type="radio" name="r" id="r1" >&nbsp;Female</h4>
+</div><div class="col-lg-6 "><h4><input type="radio" name="r" id="r2">&nbsp;Male</h4></div>
+<div class="col-lg-5 "><font style="color:red;font-family:Arial;font-size:13px;" id="not7"></font></div>
+</div>
+<div style="width:320px;font-size:11px;color:#737373;font-weight:lighter;font-family:arial">
+
+By clicking Create an account,you agree to our <span style="color:blue;">Terms</span> and confirm that you have read our <span style="color:blue;">Data Policy,</span>including our <span style="color:blue;">Cookie Use Policy.</span>You may recieve message notifications from Facebook and can opt out any time.
+
+</div><br>
+<input type="submit" value="Create an account" id="btn1">
+<p style="padding-top:20px;">
+<span style="color:blue;font-family:arial;font-weight:700;font-size:13px;">Create a Page </span><span style="color:#737373;font-family:arial;font-weight:700;font-size:13px;">for a celebrity,band or business.</span>
+</p>
+</form>
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

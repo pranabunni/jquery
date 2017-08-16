@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title></title>
+
+<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-3.2.1.min.js"><\/script>');</script>
+	<script>
+$(function() {
+    $('ul.container_block li').click(function(){
+        if($(this).find('img').css('top') == '0px')
+        {
+            $(this).find('img').animate({top:'182px'},{queue:false,duration:500});
+        }
+        else
+        {
+            $(this).find('img').animate({top:'0px'},{queue:false,duration:500});
+        }
+    });
+    $('ul.container_block2 li').click(function(){
+            if($(this).find('img').css('left') == '0px')
+            {
+                $(this).find('img').animate({left:'300px'},{queue:false,duration:500});
+            }
+            else
+            {
+                $(this).find('img').animate({left:'0px'},{queue:false,duration:500});
+            }
+    });
+});
+	</script>
+</head>
+<body>
+<ul class="container_block">
+    <li><a href="#"><img src="../bootstrap/img1.jpg" alt="thumb" />Hi,Myself Ravi Veliyat .I am working as PHP Lecturers.</a></li>
+    <li><a href="#"><img src="../bootstrap/img2.jpg" alt="thumb" />PHP is my absolute favourite Language</a></li>
+</ul>
+<ul class="container_block2">
+    <li><a href="#"><img src="../bootstrap/img3.jpg" alt="thumb" />Hi,Myself Ravi Veliyat .I am working as PHP Lecturers.</a></li>
+    <li><a href="#"><img src="../bootstrap/img4.jpg" alt="thumb" />PHP is my absolute favourite Language </a></li>
+</ul>
+</body>
+</html>
